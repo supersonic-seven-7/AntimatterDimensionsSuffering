@@ -99,7 +99,7 @@ export class DimBoost {
   static bulkRequirement(bulk) {
     const targetResets = DimBoost.purchasedBoosts + bulk;
     const tier = Math.min(targetResets + 3, this.maxDimensionsUnlockable);
-    let amount = 20;
+    let amount = 30;
     const discount = Effects.sum(
       TimeStudy(211),
       TimeStudy(222)
