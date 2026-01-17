@@ -9,7 +9,7 @@ import { GlyphTypes } from "./glyph-effects";
 // This is actually reassigned when importing saves
 // eslint-disable-next-line prefer-const
 window.player = {
-  antimatter: DC.E1,
+  antimatter: DC.D1,
   dimensions: {
     antimatter: Array.range(0, 8).map(() => ({
       bought: 0,
@@ -765,6 +765,7 @@ window.player = {
   tutorialState: 0,
   tutorialActive: true,
   options: {
+    hasSeenDisclaimer: false,
     news: {
       enabled: true,
       repeatBuffer: 40,
