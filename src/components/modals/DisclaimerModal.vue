@@ -9,14 +9,15 @@ export default {
   computed: {
     message() {
       return `Hi, Supersonic Seven here. If you proceed, you will experience what no man should have to experience.
-      This game features total suffering, QoL nerfs, gameplay nerfs, and worst of all, a Little Dickhead. This Little Dickhead
-      will stop at nothing to make you rage quit, even going so far as to try and make you say racial slurs to prevent a
-      potential softlock (don't worry you don't have to comply). You will want to scream. You will want to cry. You will want to run
-      to Mommy. You will want to die. But you can't, because you know you have a mission. You have to reach Reality in this mod.
-      If you do, Little Dickhead will be destroyed and you will beat the game. Please also note that this mod is intended for
-      Mature audiences, due to many of the things you may encounter within the game's play span. If you feel uncomfortable,
-      please consult a psychiatrist before continuing. If you wish to continue, you will be one of the few who dare to beat this
-      challenging Reality. This is your last chance to leave. Good luck, kid.`.split("\n");
+      This game features total suffering, QoL nerfs, gameplay nerfs, and worst of all, a Little Dickhead. This Little
+      Dickhead will stop at nothing to make you rage quit, even going so far as to try and make you say racial slurs
+      to prevent a potential softlock (don't worry you don't have to comply). You will want to scream. You will want
+      to cry. You will want to run to Mommy. You will want to die. But you can't, because you know you have a mission.
+      You have to reach Reality in this mod. If you do, Little Dickhead will be destroyed and you will beat the game.
+      Please also note that this mod is intended for Mature audiences, due to many of the things you may encounter
+      within the game's play span. If you feel uncomfortable, please consult a psychiatrist before continuing.
+      If you wish to continue, you will be one of the few who dare to beat this challenging Reality. This is your last
+      chance to leave. Good luck, kid.`.split("\n");
     },
   },
   methods: {
