@@ -29,7 +29,7 @@ export class TickspeedAutobuyerState extends UpgradeableAutobuyerState {
   }
 
   get antimatterCost() {
-    return DC.E140;
+    return Decimal.pow(DC.E140, 10);
   }
 
   get canBeBought() {
