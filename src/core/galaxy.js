@@ -71,7 +71,7 @@ export class Galaxy {
   }
 
   static get baseCost() {
-    return NormalChallenge(10).isRunning ? 99 : 80;
+    return NormalChallenge(10).isRunning ? 109 : 90;
   }
 
   static get requiredTier() {
