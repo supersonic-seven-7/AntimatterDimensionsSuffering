@@ -890,6 +890,10 @@ function afterSimulation(seconds, playerBefore) {
   }
 
   GameUI.notify.showBlackHoles = true;
+
+  if (!player.options.hasSeenDisclaimerModal) {
+    Modal.disclaimer.show();
+  }
 }
 
 export function simulateTime(seconds, real, fast) {
