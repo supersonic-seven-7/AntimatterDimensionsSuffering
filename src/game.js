@@ -626,6 +626,10 @@ export function gameLoop(passDiff, options = {}) {
     Enslaved.boostReality = false;
   }
 
+  if (!player.options.hasSeenDisclaimerModal) {
+    Modal.disclaimer.show();
+  }
+
   // Stopping these checks after CREDITS_START reduces lag and allows for the glyph customization modal to appear
   if (GameEnd.endState < END_STATE_MARKERS.CREDITS_START) {
     if (Tabs.current.isPermanentlyHidden) {
@@ -890,10 +894,6 @@ function afterSimulation(seconds, playerBefore) {
   }
 
   GameUI.notify.showBlackHoles = true;
-
-  if (!player.options.hasSeenDisclaimerModal) {
-    Modal.disclaimer.show();
-  }
 }
 
 export function simulateTime(seconds, real, fast) {
