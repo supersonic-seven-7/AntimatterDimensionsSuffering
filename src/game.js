@@ -626,7 +626,7 @@ export function gameLoop(passDiff, options = {}) {
     Enslaved.boostReality = false;
   }
 
-  if (!player.options.hasSeenDisclaimerModal) {
+  if (!player.options.hasSeenDisclaimer) {
     Modal.disclaimer.show();
   }
 
