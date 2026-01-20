@@ -734,6 +734,11 @@ body.t-s12 {
   height: 4.4rem;
 }
 
+.o-primary-btn--enable-toggle {
+  width: 9rem;
+  height: 4.4rem;
+}
+
 .c-modern-dim-tooltip-container {
   position: relative;
 }
