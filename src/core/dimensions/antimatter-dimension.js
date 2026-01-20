@@ -654,20 +654,24 @@ export const AntimatterDimensions = {
     const hasBigCrunchGoal = !player.break || Player.isInAntimatterChallenge;
     if (hasBigCrunchGoal && Currency.antimatter.gte(Player.infinityGoal)) return;
 
-    let maxTierProduced = EternityChallenge(3).isRunning ? 3 : 7;
+    let maxTierAllowed = EternityChallenge(3).isRunning ? 4 : 8;
     let nextTierOffset = 1;
+    let maxDimProduceDim = 2;
     if (NormalChallenge(12).isRunning) {
-      maxTierProduced--;
       nextTierOffset++;
+      maxDimProduceDim++;
     }
-    for (let tier = maxTierProduced; tier >= 1; --tier) {
-      AntimatterDimension(tier + nextTierOffset).produceDimensions(AntimatterDimension(tier), diff / 10);
+    let tier = player.currentProducingDimension;
+    if (tier <= maxTierAllowed && tier >= maxDimProduceDim) {
+      AntimatterDimension(tier).produceDimensions(AntimatterDimension(tier - nextTierOffset), diff / 10);
     }
     if (AntimatterDimension(1).amount.gt(0)) {
       player.requirementChecks.eternity.noAD1 = false;
     }
-    AntimatterDimension(1).produceCurrency(Currency.antimatter, diff);
-    if (NormalChallenge(12).isRunning) {
+    if (tier === 1) {
+      AntimatterDimension(1).produceCurrency(Currency.antimatter, diff);
+    }
+    if (NormalChallenge(12).isRunning && tier === 2) {
       AntimatterDimension(2).produceCurrency(Currency.antimatter, diff);
     }
     // Production may overshoot the goal on the final tick of the challenge
