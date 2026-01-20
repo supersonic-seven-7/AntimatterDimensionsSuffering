@@ -190,7 +190,7 @@ export default {
         </div>
       </button>
       <PrimaryButton
-        class="o-primary-btn--enable-toggle"
+        class="o-primary-btn o-primary-btn--new o-primary-btn--enable-toggle"
         @click="toggleEnabledDim"
       >
         {{ enabledText }}
