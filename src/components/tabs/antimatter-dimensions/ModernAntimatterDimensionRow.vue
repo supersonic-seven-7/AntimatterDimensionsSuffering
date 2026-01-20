@@ -133,8 +133,7 @@ export default {
       };
     },
     toggleEnabledDim() {
-      if (player.currentProducingDimension === this.tier) player.currentProducingDimension = 0;
-      else player.currentProducingDimension = this.tier;
+      return player.currentProducingDimension = (player.currentProducingDimension === this.tier ? 0 : this.tier);
     }
   }
 };
