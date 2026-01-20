@@ -72,6 +72,10 @@ export default {
     hasLongText() {
       return this.buttonValue.length > 20;
     },
+    enabledText() {
+      if (player.currentProducingDimension === this.tier) return "Enabled";
+      return "Disabled";
+    },
   },
   methods: {
     update() {
@@ -125,6 +129,10 @@ export default {
         "button-content l-modern-buy-ad-text": true,
         "tutorial--glow": this.isAffordable && this.hasTutorial
       };
+    },
+    toggleEnabledDim() {
+      if (player.currentProducingDimension === this.tier) player.currentProducingDimension = 0;
+      else player.currentProducingDimension = this.tier;
     }
   }
 };
@@ -177,6 +185,12 @@ export default {
           />
         </div>
       </button>
+      <PrimaryButton
+        class="o-primary-btn--enable-toggle"
+        @click="toggleEnabledDim"
+      >
+        {{ enabledText }}
+      </PrimaryButton>
     </div>
   </div>
 </template>
