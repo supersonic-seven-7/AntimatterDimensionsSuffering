@@ -34,6 +34,7 @@ export default {
       isCostsAD: false,
       amountDisplay: "",
       hasTutorial: false,
+      dimProducing: 0,
     };
   },
   computed: {
@@ -75,7 +76,8 @@ export default {
       return this.buttonValue.length > 20;
     },
     enabledText() {
-      if (player.currentProducingDimension === this.tier) return "Enabled";
+      const dim = this.dimProducing;
+      if (dim === this.tier) return "Enabled";
       return "Disabled";
     },
   },
@@ -107,6 +109,7 @@ export default {
       this.amountDisplay = this.tier < 8 ? format(this.amount, 2) : formatInt(this.amount);
       this.hasTutorial = (tier === 1 && Tutorial.isActive(TUTORIAL_STATE.DIM1)) ||
         (tier === 2 && Tutorial.isActive(TUTORIAL_STATE.DIM2));
+      this.dimProducing = player.currentProducingDimension;
     },
     buy() {
       if (this.isContinuumActive) return;
