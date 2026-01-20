@@ -1680,6 +1680,13 @@ br {
   margin: 0 0.5rem;
 }
 
+.o-primary-btn--enable-toggle {
+  width: 9rem;
+  height: 3.5rem;
+  font-size: 1rem;
+  margin: 0 0.5rem;
+}
+
 .o-primary-btn--option {
   display: flex;
   flex-direction: column;
