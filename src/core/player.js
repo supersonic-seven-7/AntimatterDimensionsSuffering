@@ -10,6 +10,7 @@ import { GlyphTypes } from "./glyph-effects";
 // eslint-disable-next-line prefer-const
 window.player = {
   antimatter: DC.D1,
+  currentProducingDimension: 0,
   dimensions: {
     antimatter: Array.range(0, 8).map(() => ({
       bought: 0,
