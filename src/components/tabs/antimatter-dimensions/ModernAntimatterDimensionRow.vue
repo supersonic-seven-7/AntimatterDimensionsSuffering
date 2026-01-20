@@ -1,10 +1,12 @@
 <script>
 import GenericDimensionRowText from "@/components/GenericDimensionRowText";
+import PrimaryButton from "@/components/PrimaryButton";
 
 export default {
   name: "ModernAntimatterDimensionRow",
   components: {
-    GenericDimensionRowText
+    GenericDimensionRowText,
+    PrimaryButton
   },
   props: {
     tier: {
