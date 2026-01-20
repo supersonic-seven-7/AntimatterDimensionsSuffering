@@ -16,7 +16,8 @@ export default {
     return {
       isUnlocked: false,
       isMouseOver: false,
-      showUnlockState: false
+      showUnlockState: false,
+      clicks: 0
     };
   },
   computed: {
@@ -67,7 +68,8 @@ export default {
     },
     onClick() {
       if (this.id === 11) {
-        SecretAchievement(11).unlock();
+        this.clicks++;
+        if (this.clicks >= 10) SecretAchievement(11).unlock();
       }
     }
   }
