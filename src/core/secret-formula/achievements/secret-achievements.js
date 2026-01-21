@@ -38,24 +38,26 @@ export const secretAchievements = [
   {
     id: 17,
     name: "30 Lives",
-    description: "Input the konami code."
+    get description() {
+      return `Input "the konami code".`;
+    }
   },
   {
     id: 18,
     name: "Do you feel lucky? Well do ya punk?",
     get description() {
-      return `You have a ${formatInt(1)}/${formatInt(1e5)} chance of getting this achievement every second.`;
+      return `You have a ${formatInt(1)}/${formatInt(10)} chance of getting this achievement every ${formatInt(5)} hours.`;
     }
   },
   {
     id: 21,
-    name: "Go study in real life instead",
-    description: "Purchase the secret Time Study."
+    name: "No free Time Theorems for you",
+    description: "Try to purchase Time Study 12."
   },
   {
     id: 22,
-    name: "Deep fried",
-    get description() { return `Buy ${formatInt(1e5)} Antimatter Galaxies in total while using emoji notation.`; },
+    name: "Deeper fried",
+    get description() { return `Buy ${formatInt(1e5)} Antimatter Galaxies in total while using emoji notation while Dilated.`; },
     checkRequirement: () => player.requirementChecks.permanent.emojiGalaxies >= 1e5,
     checkEvent: GAME_EVENT.GALAXY_RESET_AFTER
   },
