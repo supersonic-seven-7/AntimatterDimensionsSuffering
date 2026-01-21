@@ -11,6 +11,9 @@ import { GlyphTypes } from "./glyph-effects";
 window.player = {
   antimatter: DC.D1,
   currentProducingDimension: 0,
+  luck: {
+    infinityUpgrade: Math.floor(Math.random() * 6) + 1,
+  },
   dimensions: {
     antimatter: Array.range(0, 8).map(() => ({
       bought: 0,
