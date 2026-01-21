@@ -168,6 +168,7 @@ function maxBuyGalaxies(limit = Number.MAX_VALUE) {
     limit);
   if (Notations.current === Notation.emoji) {
     player.requirementChecks.permanent.emojiGalaxies += newGalaxies - player.galaxies;
+    if (player.dilation.active) player.requirementChecks.permanent.dilatedEmojiGalaxies += newGalaxies - player.galaxies;
   }
   // Galaxy count is incremented by galaxyReset(), so add one less than we should:
   player.galaxies = newGalaxies - 1;
