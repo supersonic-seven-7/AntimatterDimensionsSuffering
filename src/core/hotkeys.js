@@ -386,7 +386,7 @@ GameKeyboard.bindHotkey("alt+y", () => toggleAutobuyer(Autobuyer.reality));
 // A few special GameKeyboards
 GameKeyboard.bind(
   ["mod+shift+c", "mod+shift+i", "mod+shift+j", "f12"],
-  () => SecretAchievement(23).unlock()
+  () => GameUI.notify.info("Cheaters never prosper :)");
 );
 
 // Toggle autobuyers
