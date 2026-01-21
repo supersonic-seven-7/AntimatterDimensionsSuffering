@@ -298,7 +298,8 @@ export const GAME_SPEED_EFFECT = {
   BLACK_HOLE: 3,
   TIME_STORAGE: 4,
   SINGULARITY_MILESTONE: 5,
-  NERFS: 6
+  NERFS: 6,
+  SECRET_ACHIEVEMENTS: 7
 };
 
 /**
@@ -311,7 +312,8 @@ export function getGameSpeedupFactor(effectsToConsider, blackHolesActiveOverride
   let effects;
   if (effectsToConsider === undefined) {
     effects = [GAME_SPEED_EFFECT.FIXED_SPEED, GAME_SPEED_EFFECT.TIME_GLYPH, GAME_SPEED_EFFECT.BLACK_HOLE,
-      GAME_SPEED_EFFECT.TIME_STORAGE, GAME_SPEED_EFFECT.SINGULARITY_MILESTONE, GAME_SPEED_EFFECT.NERFS];
+      GAME_SPEED_EFFECT.TIME_STORAGE, GAME_SPEED_EFFECT.SINGULARITY_MILESTONE, GAME_SPEED_EFFECT.NERFS,
+      GAME_SPEED_EFFECT.SECRET_ACHIEVEMENTS];
   } else {
     effects = effectsToConsider;
   }
@@ -362,6 +364,11 @@ export function getGameSpeedupFactor(effectsToConsider, blackHolesActiveOverride
       const nerfModifier = Math.clampMax(Time.thisRealityRealTime.totalMinutes / 10, 1);
       factor = Math.pow(factor, nerfModifier);
     }
+  }
+
+  if (effects.includes(GAME_SPEED_EFFECT.SECRET_ACHIEVEMENTS)) {
+    const secretAchievements = SecretAchievements.all.filter(a => a.isUnlocked).length;
+    factor = factor * Math.pow(2, secretAchievements);
   }
 
 
@@ -502,7 +509,7 @@ export function gameLoop(passDiff, options = {}) {
       // These variables are the actual game speed used and the game speed unaffected by time storage, respectively
       const reducedTimeFactor = getGameSpeedupFactor();
       const totalTimeFactor = getGameSpeedupFactor([GAME_SPEED_EFFECT.FIXED_SPEED, GAME_SPEED_EFFECT.TIME_GLYPH,
-        GAME_SPEED_EFFECT.BLACK_HOLE, GAME_SPEED_EFFECT.SINGULARITY_MILESTONE]);
+        GAME_SPEED_EFFECT.BLACK_HOLE, GAME_SPEED_EFFECT.SINGULARITY_MILESTONE, GAME_SPEED_EFFECT.SECRET_ACHIEVEMENTS]);
       const amplification = Ra.unlocks.improvedStoredTime.effects.gameTimeAmplification.effectOrDefault(1);
       const beforeStore = player.celestials.enslaved.stored;
       player.celestials.enslaved.stored = Math.clampMax(player.celestials.enslaved.stored +
