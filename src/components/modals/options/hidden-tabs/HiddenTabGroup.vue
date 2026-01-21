@@ -35,7 +35,7 @@ export default {
       return this.tab.id === Tabs.current.id;
     },
     alwaysVisible() {
-      return !this.isHidable || this.isCurrentTab;
+      return !this.isHidable;
     },
     rowClass() {
       return {
