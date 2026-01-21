@@ -51,7 +51,6 @@ export default {
         if (!player.secretUnlocks.viewSecretTS) {
           player.secretUnlocks.viewSecretTS = true;
           this.$refs.study.addEventListener("transitionend", function achGiver(e) {
-            SecretAchievement(21).unlock();
             e.target.removeEventListener(e.type, achGiver);
           });
         }
@@ -69,7 +68,7 @@ export default {
     @click="handleClick"
   >
     <span>
-      Unlock a Secret Achievement
+      I used to be a Secret Achievement :)
       <br>
       <br>
       (Double click to hide)
