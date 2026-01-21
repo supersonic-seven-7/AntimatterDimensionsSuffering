@@ -489,7 +489,7 @@ export const BlackHoles = {
    */
   calculateSpeedups() {
     const effectsToConsider = [GAME_SPEED_EFFECT.FIXED_SPEED, GAME_SPEED_EFFECT.TIME_GLYPH,
-      GAME_SPEED_EFFECT.SINGULARITY_MILESTONE, GAME_SPEED_EFFECT.NERFS];
+      GAME_SPEED_EFFECT.SINGULARITY_MILESTONE, GAME_SPEED_EFFECT.NERFS, GAME_SPEED_EFFECT.SECRET_ACHIEVEMENTS];
     const speedupWithoutBlackHole = getGameSpeedupFactor(effectsToConsider);
     const speedups = [speedupWithoutBlackHole];
     effectsToConsider.push(GAME_SPEED_EFFECT.BLACK_HOLE);
