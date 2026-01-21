@@ -67,7 +67,6 @@ export default {
     showStore() {
       if (STEAM && !SteamRuntime.isActive) return;
       if (this.creditsClosed) return;
-      SecretAchievement(33).unlock();
       if (this.loggedIn) Modal.shop.show();
       else Modal.message.show("You cannot purchase STD coins without logging in first.");
     },
