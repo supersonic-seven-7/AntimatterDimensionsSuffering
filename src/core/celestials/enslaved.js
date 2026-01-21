@@ -95,7 +95,7 @@ export const Enslaved = {
       player.celestials.enslaved.storedReal = maxTime;
     }
     // More than 24 hours in milliseconds
-    if (player.celestials.enslaved.storedReal > (24 * 60 * 60 * 1000)) SecretAchievement(46).unlock();
+    if (player.celestials.enslaved.storedReal > (24 * 60 * 60 * 1000)) GameUI.notify.info("That's a lot of stored time you got there! Suck it nerd :)");
     player.lastUpdate = thisUpdate;
   },
   autoStoreRealTime(diffMs) {
