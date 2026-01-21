@@ -63,13 +63,15 @@ export const secretAchievements = [
   },
   {
     id: 23,
-    name: "Stop right there criminal scum!",
-    description: "Open the console."
+    name: "I hope you've learned your lesson",
+    description: "Go to jail.",
+    checkRequirement: false,//change when we add jail
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER
   },
   {
     id: 24,
-    name: "Real news",
-    description: "Click on a news ticker message that does something when you click on it."
+    name: "Never gonna give you up",
+    description: "Get rickrolled."
   },
   {
     id: 25,
