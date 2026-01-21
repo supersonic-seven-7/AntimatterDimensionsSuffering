@@ -129,7 +129,7 @@ export function eternity(force, auto, specialConditions = {}) {
   player.records.thisEternity.bestEPmin = DC.D0;
   player.records.thisEternity.bestInfinitiesPerMs = DC.D0;
   player.records.thisEternity.bestIPMsWithoutMaxAll = DC.D0;
-  player.requirementChecks.eternity.singleTickspeed = DC.D0;
+  player.requirementChecks.eternity.singleTickspeed = 0;
   resetTimeDimensions();
   resetTickspeed();
   playerInfinityUpgradesOnReset();
