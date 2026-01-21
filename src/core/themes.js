@@ -112,7 +112,7 @@ Theme.tryUnlock = function(name) {
   const isAlreadyUnlocked = player.secretUnlocks.themes.has(fullName);
   player.secretUnlocks.themes.add(fullName);
   Theme.set(prefix);
-  SecretAchievement(25).unlock();
+  //SecretAchievement(25).unlock(); Come back to this later
   if (!isAlreadyUnlocked) {
     GameUI.notify.success(`You have unlocked the ${name.capitalize()} theme!`, 5000);
     if (Theme.current().isAnimated) {
