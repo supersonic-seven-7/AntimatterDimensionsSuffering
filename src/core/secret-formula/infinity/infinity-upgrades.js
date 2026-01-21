@@ -115,8 +115,8 @@ export const infinityUpgrades = {
   thisInfinityTimeMult: {
     id: "timeMult2",
     cost: 3,
-    description: "Antimatter Dimensions gain a multiplier based on time spent in current Infinity",
-    effect: () => Decimal.max(Math.pow(Time.thisInfinity.totalMinutes / 4, 0.25), 1),
+    description: "Antimatter Dimensions gain a multiplier based on Luck",
+    effect: () => player.luck.infinityUpgrade,
     formatEffect: value => formatX(value, 2, 2),
     charged: {
       description:
