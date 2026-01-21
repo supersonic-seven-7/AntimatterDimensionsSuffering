@@ -84,26 +84,26 @@ export const breakInfinityUpgrades = {
         Ra.unlocks.continuousTTBoost.effects.infinity
       );
       infinities = infinities.times(getAdjustedGlyphEffect("infinityinfmult"));
-      const timeStr = Time.bestInfinity.totalMilliseconds <= 50
+      const timeStr = Time.bestInfinity.totalMilliseconds <= 10
         ? `${TimeSpan.fromMilliseconds(100).toStringShort()} (capped)`
-        : `${Time.bestInfinity.times(2).toStringShort()}`;
+        : `${Time.bestInfinity.times(10).toStringShort()}`;
       return `${quantify("Infinity", infinities)} every ${timeStr}`;
     }
   },
   autobuyMaxDimboosts: {
     id: "autobuyMaxDimboosts",
-    cost: 5e9,
+    cost: 1e140,
     description: "Unlock the buy max Dimension Boost Autobuyer mode"
   },
   autobuyerSpeed: {
     id: "autoBuyerUpgrade",
-    cost: 1e15,
+    cost: 1e50,
     description: "Autobuyers unlocked or improved by Normal Challenges work twice as fast"
   },
   tickspeedCostMult: rebuyable({
     id: 0,
     initialCost: 1e6,
-    costIncrease: 5,
+    costIncrease: 10,
     maxUpgrades: 8,
     description: "Reduce post-infinity Tickspeed Upgrade cost multiplier scaling",
     afterEC: () => (EternityChallenge(11).completions > 0
@@ -116,7 +116,7 @@ export const breakInfinityUpgrades = {
   dimCostMult: rebuyable({
     id: 1,
     initialCost: 1e7,
-    costIncrease: 5e3,
+    costIncrease: 1e4,
     maxUpgrades: 7,
     description: "Reduce post-infinity Antimatter Dimension cost multiplier scaling",
     afterEC: () => (EternityChallenge(6).completions > 0
@@ -129,7 +129,7 @@ export const breakInfinityUpgrades = {
   ipGen: rebuyable({
     id: 2,
     initialCost: 1e7,
-    costIncrease: 10,
+    costIncrease: 100,
     maxUpgrades: 10,
     effect: value => Player.bestRunIPPM.times(value / 20),
     description: () => {
