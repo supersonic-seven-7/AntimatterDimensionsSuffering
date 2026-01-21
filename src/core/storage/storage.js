@@ -71,6 +71,7 @@ export const GameStorage = {
     2: undefined
   },
   saved: 0,
+  exported: 0,
   lastSaveTime: Date.now(),
   lastCloudSave: Date.now(),
   offlineEnabled: undefined,
@@ -254,7 +255,6 @@ export const GameStorage = {
     if (!this.canSave()) return;
     this.lastSaveTime = Date.now();
     GameIntervals.save.restart();
-    if (manual && ++this.saved > 99) SecretAchievement(12).unlock();
     const root = {
       current: this.currentSlot,
       saves: this.saves
@@ -348,6 +348,7 @@ export const GameStorage = {
   export() {
     copyToClipboard(this.exportModifiedSave());
     GameUI.notify.info("Exported current savefile to your clipboard");
+    if (++this.exported > 99) SecretAchievement(12).unlock();
   },
 
   get exportDateString() {
@@ -422,6 +423,7 @@ export const GameStorage = {
 
   loadPlayerObject(playerObject) {
     this.saved = 0;
+    this.exported = 0;
 
     const checkString = this.checkPlayerObject(playerObject);
     if (playerObject === Player.defaultStart || checkString !== "") {
