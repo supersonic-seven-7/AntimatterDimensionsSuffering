@@ -122,6 +122,15 @@ export const shopPurchases = {
     isUnlocked: () => PlayerProgress.realityUnlocked(),
     lockText: "Reality",
   },
+  secretAch: {
+    key: "secretAch",
+    cost: 0,
+    description: "Get a Secret Achievement",
+    instantPurchase: true,
+    onPurchase: () => {
+      SecretAchievement(33).unlock();
+    }
+  },
 };
 
 if (STEAM) {
