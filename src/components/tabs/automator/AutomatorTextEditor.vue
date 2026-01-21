@@ -157,7 +157,7 @@ export const AutomatorTextUI = {
 
       AutomatorData.recalculateErrors();
       const errors = AutomatorData.currentErrors().length;
-      if (errors > editor.doc.size) SecretAchievement(48).unlock();
+      if (errors > editor.doc.size) GameUI.notify.info("Impressive, but that won't get you anywhere this time :)");
 
       // Clear all line highlighting as soon as any text is changed because that might have shifted lines around
       AutomatorHighlighter.clearAllHighlightedLines();
