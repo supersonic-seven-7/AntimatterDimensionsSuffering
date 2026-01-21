@@ -294,7 +294,7 @@ export const shortcuts = [
     name: "Doesn't exist",
     keys: ["9"],
     type: "bind",
-    function: () => SecretAchievement(41).unlock(),
+    function: () => GameUI.notify.info("That's not how you unlock the 9th Dimension, silly!"),
     visible: false
   },
   {
