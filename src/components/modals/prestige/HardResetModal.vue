@@ -22,12 +22,9 @@ export default {
       return player.speedrun.isUnlocked;
     }
   },
-  destroyed() {
-    if (this.willHardReset) SecretAchievement(38).unlock();
-  },
   methods: {
     hardReset() {
-      if (this.willHardReset) GameStorage.hardReset();
+      if (this.willHardReset) SecretAchievement(38).unlock();
       this.input = "";
     },
   },
