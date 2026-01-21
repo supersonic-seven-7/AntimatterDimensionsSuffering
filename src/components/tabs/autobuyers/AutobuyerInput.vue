@@ -70,7 +70,7 @@ export default {
       this.isFocused = true;
     },
     handleChange(event) {
-      if (this.displayValue === "69") {
+      if (this.displayValue === "69420") {
         SecretAchievement(28).unlock();
       }
       if (this.isValid) {
