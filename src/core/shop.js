@@ -184,10 +184,12 @@ class ShopPurchaseState extends RebuyableMechanicState {
       : undefined;
 
     // Contact the purchase provider to verify the purchase
+    /*
     const success = SteamRuntime.isActive
       ? await SteamRuntime.purchaseShopItem(this.config.key, this.cost, cosmeticId)
       : await Payments.buyUpgrade(this.config.key, cosmeticId);
     if (!success) return false;
+    */
 
     if (player.IAP.enabled) Speedrun.setSTDUse(true);
     if (this.config.instantPurchase) this.config.onPurchase();
