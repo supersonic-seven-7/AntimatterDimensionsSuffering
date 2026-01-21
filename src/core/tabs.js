@@ -165,7 +165,8 @@ class TabState {
   }
 
   toggleVisibility() {
-    if (this.id === Tabs.current.id) return;
+    if (this.id === Tabs.current.id) return Tabs.current.id = 1;
+    if (Tabs.all.filter(t => t.isUnlocked && t.id !== 1).every(t => t.isHidden) && this.id === 1) return;
     player.options.hiddenTabBits ^= (1 << this.id);
 
     checkTabVisibilityForSecretAchievement();
