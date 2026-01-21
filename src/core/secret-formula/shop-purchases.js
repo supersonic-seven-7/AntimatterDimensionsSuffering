@@ -124,7 +124,7 @@ export const shopPurchases = {
   },
   secretAch: {
     key: "secretAch",
-    cost: 0,
+    cost: 1,
     description: "Get a Secret Achievement",
     instantPurchase: true,
     onPurchase: () => {
