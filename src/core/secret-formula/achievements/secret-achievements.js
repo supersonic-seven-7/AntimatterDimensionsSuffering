@@ -76,20 +76,20 @@ export const secretAchievements = [
   {
     id: 25,
     name: "Shhh... It's a secret",
-    description: "Discover a secret theme."
+    description: "Discover THE SECRET THEME."
   },
   {
     id: 26,
-    name: "You're a failure",
+    name: "You're really a failure",
     get description() {
-      return `Fail Eternity Challenges ${formatInt(10)} times without refreshing.
+      return `Fail Time Dilation ${formatInt(10)} times without refreshing.
       What are you doing with your life...`;
     },
-    checkRequirement: (function() {
+    /*checkRequirement: (function() {
       let count = 0;
       return () => ++count >= 10;
     }()),
-    checkEvent: GAME_EVENT.CHALLENGE_FAILED
+    checkEvent: GAME_EVENT.CHALLENGE_FAILED*/ //Fix this soon
   },
   {
     id: 27,
