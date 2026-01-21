@@ -41,9 +41,6 @@ export class GameOptions {
   }
 
   static refreshUpdateRate() {
-    if (player.options.updateRate === 200) {
-      SecretAchievement(31).unlock();
-    }
     GameIntervals.gameLoop.restart();
   }
 
