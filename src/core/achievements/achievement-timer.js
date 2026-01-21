@@ -30,5 +30,6 @@ export const AchievementTimers = {
   marathon2: new AchievementTimer(false),
   pain: new AchievementTimer(true),
   stats: new AchievementTimer(true),
-  RAM: new AchievementTimer(true)
+  RAM: new AchievementTimer(true),
+  ALL: new AchievementTimer(true)
 };
