@@ -59,6 +59,7 @@ const secretImports = [
   "c784c9c0a82b5f3c13884842fa6e6a8f5aed994ef401e6476c30b1adfe439b22",
   "73e1e6b60470efbfb8c4fbf3aa58d247fa8f70fe6bfd3a88b9f889a2a456b6d8",
   "c6bf02c83b92c29522a5235d4b29f15a901b6001ad7b92a87f39087486674e51",
+  "bfe95751a3fa6c1a8104df130faf859ced9413b90e20dfb5999470814f0bc05a",
 ];
 
 function secretImportIndex(data) {
@@ -92,6 +93,9 @@ export function tryImportSecret(data) {
       return true;
     case 5:
       SecretAchievement(15).unlock();
+      return true;
+    case 6:
+      SecretAchievement(17).unlock();
       return true;
     default:
       return false;
