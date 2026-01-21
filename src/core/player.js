@@ -249,6 +249,7 @@ window.player = {
       onlyAD8: true,
       noAD1: true,
       noRG: true,
+      singleTickspeed: 0,
     },
     reality: {
       noAM: true,
