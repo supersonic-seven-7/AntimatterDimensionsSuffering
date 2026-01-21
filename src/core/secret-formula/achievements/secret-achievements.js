@@ -94,35 +94,37 @@ export const secretAchievements = [
   {
     id: 27,
     name: "It's not called matter dimensions is it?",
-    description: "Get Infinite matter.",
-    checkRequirement: () => Currency.matter.gte(Decimal.NUMBER_MAX_VALUE),
+    description: "Get TRUE INFINITE matter.",
+    checkRequirement: () => Currency.matter.gte(Decimal.MAX_VALUE),
     checkEvent: GAME_EVENT.GAME_TICK_AFTER
   },
   {
     id: 28,
-    name: "Nice.",
+    name: "Double nice.",
     description: "Don't act like you don't know what you did."
   },
   {
     id: 31,
     name: "You should download some more RAM",
-    get description() { return `Set your update rate to ${formatInt(200)}ms.`; }
+    get description() { return `Set your update rate to ${formatInt(200)}ms for ${formatInt(5)} real-time hours.`; },
+    checkRequirement: () => AchievementTimers.RAM.check(player.options.updateRate === 200, 18000),
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER
   },
   {
     id: 32,
     name: "Less than or equal to 0.001",
     get description() {
-      return `Get a fastest infinity or eternity time of less than or equal to ${format(0.001, 3, 3)} seconds.`;
+      return `Have the sums of your best Normal/Infinity Challenges be less than or equal to ${format(0.001, 3, 3)} seconds.`;
     },
     checkRequirement: () =>
-      Time.bestInfinity.totalMilliseconds <= 1 ||
-      Time.bestEternity.totalMilliseconds <= 1,
+      player.challenge.normal.bestTimes.sum() <= 1 &&
+      player.challenge.infinity.bestTimes.sum() <= 1,
     checkEvent: [GAME_EVENT.BIG_CRUNCH_AFTER, GAME_EVENT.ETERNITY_RESET_AFTER]
   },
   {
     id: 33,
     name: "A sound financial decision",
-    description: "Click on the button to purchase STD coins."
+    description: "Buy this Secret Achievement."
   },
   {
     id: 34,
@@ -132,68 +134,67 @@ export const secretAchievements = [
   {
     id: 35,
     name: "Should we tell them about buy max...",
-    get description() { return `Buy single Tickspeed upgrades ${formatInt(1e5)} times.`; },
-    checkRequirement: () => player.requirementChecks.permanent.singleTickspeed >= 1e5,
+    get description() { return `Buy single Tickspeed upgrades ${formatInt(1e5)} times in a single Eternity.`; },
+    checkRequirement: () => player.requirementChecks.eternity.singleTickspeed >= 1e5,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER
   },
   {
     id: 36,
-    name: "While you were away... Nothing happened.",
-    description: "See nothing happen while you were away."
+    name: "You missed the update and have nothing to show for it",
+    get description() { return `See nothing happen while you were away for more than ${formatInt(5)} real-time hours.`; }
   },
   {
     id: 37,
     name: "You followed the instructions",
-    description: "Follow instructions."
+    description: "Follow instructions."//Hold off again
   },
   {
     id: 38,
     name: "Knife's edge",
-    description: "Close the Hard Reset modal after typing in the confirmation."
+    description: "Try to Hard Reset the game."
   },
   {
     id: 41,
-    name: "That dimension doesn’t exist",
-    description: "Try to purchase the 9th dimension."
+    name: "That dimension... DOES exist?",
+    description: "Purchase the 9th dimension."//Add this later
   },
   {
     id: 42,
     name: "SHAME ON ME",
-    description: "Try to use EC12 to speed up time."
+    description: "Try to use EC12 to slow down time."
   },
   {
     id: 43,
-    name: "A cacophonous chorus",
-    description: "Have all equipped Glyphs be Music Glyphs.",
-    checkRequirement: () => Glyphs.active.length && Glyphs.active.every(x => Glyphs.isMusicGlyph(x)),
-    checkEvent: GAME_EVENT.GLYPHS_EQUIPPED_CHANGED
+    name: "Noise",
+    description: "Make a lot of noise."
   },
   {
     id: 44,
     name: "Are you statisfied now?",
-    get description() { return `Stare intently at the statistics tab for ${formatInt(15)} real-time minutes.`; },
-    checkRequirement: () => AchievementTimers.stats.check(Tab.statistics.isOpen, 900),
+    get description() { return `Stare intently at the statistics tab for ${formatInt(5)} real-time hours.`; },
+    checkRequirement: () => AchievementTimers.stats.check(Tab.statistics.isOpen, 18000),
     checkEvent: GAME_EVENT.GAME_TICK_AFTER
   },
   {
     id: 45,
-    name: "This dragging is dragging on",
-    description: "Drag the Perks around for a minute.",
-    checkRequirement: () => player.requirementChecks.permanent.perkTreeDragging++ / 100 >= 60
+    name: "Help me",
+    get description() { return `Use the ALL Notation for ${formatInt(5)} real-time hours.`; },
+    checkRequirement: () => AchievementTimers.ALL.check(player.options.notation === "ALL", 18000),
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER
   },
   {
     id: 46,
-    name: "For a rainy day",
-    description: "Store a day of real time."
+    name: "A rainy day",
+    get description() { return `Be in jail for ${formatInt(24)} real-time hours.`; }//Add with jail
   },
   {
     id: 47,
     name: "ALT+",
-    description: "Hide every possible tab."
+    description: "Hide every tab."
   },
   {
     id: 48,
-    name: "Stack overflow",
-    description: "Have more Automator errors than lines."
+    name: "Wrath of Supersonic Seven",
+    description: "Summon the Wrath of Supersonic Seven." //iykyk it's that thing with the credits
   },
 ];
