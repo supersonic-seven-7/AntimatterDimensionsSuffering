@@ -76,10 +76,10 @@ export function tryImportSecret(data) {
       FullScreenAnimationHandler.display("a-barrel-roll", 5);
       return true;
     case 1:
-      GameUI.notify.info("I disabled that :)")
+      GameUI.notify.info("I disabled that :)");
       return true;
     case 2:
-      SecretAchievement(37).unlock();
+      GameUI.notify.info("Nice try :)");
       return true;
     case 3:
       if (player.records.fullGameCompletions > 0 || DEV) Speedrun.unlock();
