@@ -20,7 +20,7 @@ export default {
       this.time = Date.now();
     },
     crossText() {
-      return this.time % 5000 > 4000 ? `Secret Achievements are optional and give no bonuses.` : wordShift.randomCrossWords("Secret Achievements are optional and give no bonuses.");
+      return this.time % 5000 > 1000 ? `Secret Achievements are optional and give no bonuses.` : wordShift.randomCrossWords("Secret Achievements are optional and give no bonuses.");
     }
   }
 };
