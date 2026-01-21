@@ -252,7 +252,6 @@ export const shortcuts = [
     type: "bindRepeatable",
     function: () => {
       GameUI.notify.info("Paying respects");
-      SecretAchievement(13).unlock();
     },
     visible: false
   }, {
