@@ -1635,14 +1635,29 @@ export const news = [
       `The Galactic Association of News Writers has filed a class action lawsuit against the developers of the
       small web game "Antimatter Dimensions" for mass plagiarism.`
   },
-  {
-    id: "a271",
-    text:
+  (function() {
+    let clicks = 0;
+    const normal =
       `<i style='border: 0.1rem solid black; border-radius: 50%; padding: 0.4rem; color: #2196F3; background: white;
       cursor: pointer;' class='fas fa-volume-up' onClick='(function(){new Audio("audio/news.mp3").play();})();'>
       </i> This news message is a test of "News 2.0". News 2.0 will feature things like the ability to listen to
-      an audio version of any news message!`
-  },
+      an audio version of any news message!`;
+    return {
+      id: "a271",
+      get text() {
+        return normal;
+      },
+      reset() {
+        clicks = 0;
+      },
+      onClick() {
+        clicks++;
+        new Audio("audio/news.mp3").play();
+        if (clicks >= 20) SecretAchievement(43).unlock();
+        return this.text;
+      }
+    };
+  }()),
   {
     id: "a272",
     text: "What's hevier, a pound of bricks, or a pound of antimatter?"
