@@ -44,7 +44,7 @@ export const tabs = [
     name: "Options",
     hideAt: 1.6,
     id: 1,
-    hidable: false,
+    hidable: true,
     subtabs: [
       {
         key: "saving",
