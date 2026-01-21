@@ -63,9 +63,11 @@ export const GameIntervals = (function() {
     // This simplifies auto-backup code to check every second instead of dynamically stopping and
     // restarting the interval every save operation, and is how it's structured on Android as well
     checkEverySecond: interval(() => {
-      if (Math.random() < 0.00001) SecretAchievement(18).unlock();
       GameStorage.tryOnlineBackups();
     }, 1000),
+    checkEveryFiveHours: interval(() => {
+      if (Math.random() < 0.1) SecretAchievement(18).unlock();
+    }, 18000000),
     checkForUpdates: interval(() => {
       if (isLocalEnvironment()) return;
       fetch("version.txt")
