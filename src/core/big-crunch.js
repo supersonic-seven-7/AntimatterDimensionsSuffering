@@ -165,6 +165,7 @@ export function secondSoftReset(enteringAntimatterChallenge) {
   player.records.thisInfinity.realTime = 0;
   Player.resetRequirements("infinity");
   AchievementTimers.marathon2.reset();
+  player.luck.infinityUpgrade = Math.floor(Math.random() * 6) + 1;
 }
 
 export function preProductionGenerateIP(diff) {
