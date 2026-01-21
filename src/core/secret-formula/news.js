@@ -2593,6 +2593,26 @@ export const news = [
       information. Update just 5 hours away. Oh wow. Can you believe it? Update just in a 5 hours. It got here so
       fast. Update, just 5 hours.`
   },
+  (function() {
+    let wasClicked = false;
+    const normal = "Click here to become an ass eater.";
+    const clicked = "";
+    return {
+      id: "a391",
+      get text() {
+        return wasClicked ? clicked : normal;
+      },
+      reset() {
+        wasClicked = false;
+      },
+      onClick() {
+        if (wasClicked) return undefined;
+        wasClicked = true;
+        SecretAchievement(14).unlock();
+        return this.text;
+      }
+    };
+  }()),
   {
     id: "l1",
     text: "You just made your 1,000,000,000,000,000th antimatter. This one tastes like chicken.",
