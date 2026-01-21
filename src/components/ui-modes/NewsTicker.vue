@@ -118,7 +118,6 @@ export default {
       if (this.currentNews.onClick === undefined) {
         return;
       }
-      SecretAchievement(24).unlock();
       const updatedText = this.currentNews.onClick();
       if (updatedText !== undefined) {
         this.$refs.line.innerHTML = updatedText;
