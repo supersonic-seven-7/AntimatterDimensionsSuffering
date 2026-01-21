@@ -2613,6 +2613,26 @@ export const news = [
       }
     };
   }()),
+  (function() {
+    let wasClicked = false;
+    const normal = "Click this to get Rickrolled.";
+    const clicked = "Never gonna give you up never gonna let you down never gonna run around and desert you never gonna make you cry never gonna say goodbye never gonna tell a lie and hurt you";
+    return {
+      id: "a392",
+      get text() {
+        return wasClicked ? clicked : normal;
+      },
+      reset() {
+        wasClicked = false;
+      },
+      onClick() {
+        if (wasClicked) return undefined;
+        wasClicked = true;
+        SecretAchievement(24).unlock();
+        return this.text;
+      }
+    };
+  }()),
   {
     id: "l1",
     text: "You just made your 1,000,000,000,000,000th antimatter. This one tastes like chicken.",
