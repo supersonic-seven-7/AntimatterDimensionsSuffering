@@ -237,6 +237,7 @@ export class EternityChallengeState extends GameMechanicState {
   }
 
   exit(isRestarting) {
+    if (Time.thisEternity.totalHours < 5) return;//Add modal later
     if (Player.isInAntimatterChallenge) {
       Player.antimatterChallenge.exit();
     }
