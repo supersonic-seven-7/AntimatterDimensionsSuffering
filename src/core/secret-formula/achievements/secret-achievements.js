@@ -1,13 +1,13 @@
 export const secretAchievements = [
   {
     id: 11,
-    name: "The first one's always free",
-    description: "Click on this Achievement."
+    name: "The first one's always free?",
+    description: "Click on this Achievement 10 times."
   },
   {
     id: 12,
     name: "Just in case",
-    get description() { return `Save ${formatInt(100)} times without refreshing.`; }
+    get description() { return `Export save ${formatInt(100)} times without refreshing.`; }
   },
   {
     id: 13,
@@ -16,23 +16,23 @@ export const secretAchievements = [
   },
   {
     id: 14,
-    name: "So do I",
-    description: "Say something naughty."
+    name: "So am I",
+    description: "Become an ass eater."
   },
   {
     id: 15,
-    name: "Do a barrel roll!",
-    description: "Do a barrel roll.",
+    name: "Do a backward barrel roll!",
+    description: "Do a backward barrel roll.",
   },
   {
     id: 16,
     name: "Do you enjoy pain?",
     get description() {
-      return `Use a "painful" notation for ${formatInt(10)} real-time minutes
+      return `Use a "painful" notation for ${formatInt(5)} real-time hours
       after doing an Eternity.`;
     },
     checkRequirement: () => AchievementTimers.pain
-      .check(PlayerProgress.eternityUnlocked() && Notations.current.isPainful, 600),
+      .check(PlayerProgress.eternityUnlocked() && Notations.current.isPainful, 18000),
     checkEvent: GAME_EVENT.GAME_TICK_AFTER
   },
   {
