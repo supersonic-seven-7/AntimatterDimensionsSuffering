@@ -129,6 +129,7 @@ class NormalChallengeState extends GameMechanicState {
   }
 
   exit() {
+    if (Time.thisInfinity.totalHours < 5) return;//Add modal later
     player.challenge.normal.current = 0;
     bigCrunchReset(true, false);
     if (!Enslaved.isRunning) Tab.dimensions.antimatter.show();
