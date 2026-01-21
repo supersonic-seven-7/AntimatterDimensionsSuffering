@@ -1,13 +1,27 @@
 <script>
 import SecretAchievementRow from "./SecretAchievementRow";
+import wordShift from "@/core/word-shift";
 
 export default {
   name: "SecretAchievementTab",
+  data() {
+    return {
+      time: 0
+    };
+  },
   components: {
     SecretAchievementRow
   },
   computed: {
     rows: () => SecretAchievements.allRows,
+  },
+  methods: {
+    update() {
+      this.time = Date.now();
+    },
+    crossText() {
+      return this.time % 5000 > 4000 ? `Secret Achievements are optional and give no bonuses.` : wordShift.randomCrossWords("Secret Achievements are optional and give no bonuses.");
+    }
   }
 };
 </script>
@@ -16,7 +30,7 @@ export default {
   <div class="l-achievements-tab">
     <div class="c-achievements-tab__header">
       <span>
-        Secret Achievements are optional and give no bonuses.
+        {{ crossText() }}
       </span>
     </div>
     <div class="l-achievement-grid">
