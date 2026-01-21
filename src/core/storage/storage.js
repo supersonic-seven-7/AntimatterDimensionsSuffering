@@ -542,7 +542,7 @@ export const GameStorage = {
     // The condition for this secret achievement is only checked when the player is actively storing real time, either
     // when online or simulating time. When only storing offline, the condition is never actually entered in the
     // gameLoop due to the option technically being false, so we need to check it on-load too.
-    if (player.celestials.enslaved.storedReal > (24 * 60 * 60 * 1000)) SecretAchievement(46).unlock();
+    if (player.celestials.enslaved.storedReal > (24 * 60 * 60 * 1000)) GameUI.notify.info("That's a lot of stored time you got there! Suck it nerd :)");
     GameUI.update();
 
     for (const resource of AlchemyResources.all) {
