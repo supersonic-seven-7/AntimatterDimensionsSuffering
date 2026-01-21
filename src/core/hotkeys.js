@@ -561,7 +561,6 @@ function testKonami(character) {
   else if (character === konamiCode[0]) konamiStep = 1;
   else konamiStep = 0;
   if (konamiCode.length <= konamiStep) {
-    SecretAchievement(17).unlock();
     Currency.antimatter.bumpTo(30);
     Speedrun.startTimer();
   }
