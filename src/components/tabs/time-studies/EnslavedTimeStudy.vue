@@ -37,8 +37,10 @@ export default {
       this.isVisible = Enslaved.isRunning && player.celestials.enslaved.hasSecretStudy;
     },
     handleClick() {
-      if (!Enslaved.isRunning || player.celestials.enslaved.hasSecretStudy) return;
-      SecretAchievement(21).unlock();
+      if (!Enslaved.isRunning || player.celestials.enslaved.hasSecretStudy) {
+        SecretAchievement(21).unlock();
+        return;
+      }
       player.celestials.enslaved.hasSecretStudy = true;
       EnslavedProgress.secretStudy.giveProgress();
       Currency.timeTheorems.add(this.enslavedTT);
