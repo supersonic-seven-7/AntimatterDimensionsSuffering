@@ -896,7 +896,7 @@ window.player = {
       blackHole: true,
       realityShards: true
     },
-    hiddenTabBits: 0,
+    hiddenTabBits: 1024,
     hiddenSubtabBits: Array.repeat(0, 11),
     lastOpenTab: 0,
     lastOpenSubtab: Array.repeat(0, 11),
