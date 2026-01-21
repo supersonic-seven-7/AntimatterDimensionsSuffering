@@ -65,7 +65,7 @@ export const secretAchievements = [
     id: 23,
     name: "I hope you've learned your lesson",
     description: "Go to jail.",
-    checkRequirement: false,//change when we add jail
+    checkRequirement: () => false,//change when we add jail
     checkEvent: GAME_EVENT.GAME_TICK_AFTER
   },
   {
