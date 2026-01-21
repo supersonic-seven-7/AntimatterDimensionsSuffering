@@ -264,6 +264,7 @@ window.player = {
     },
     permanent: {
       emojiGalaxies: 0,
+      dilatedEmojiGalaxies: 0,
       singleTickspeed: 0,
       perkTreeDragging: 0
     }
